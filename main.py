@@ -8,7 +8,16 @@ purpose: Encode and decode 8-digit strings of numbers for Lab 6 of COP3502C
 
 # TODO: Create this function
 def decode(encoded_password: str) -> str:
-    pass
+    decoded_password = ""
+    for i in encoded_password:
+        decoded = int(i) - 3
+        if decoded < 0:
+            decoded += 10
+            decoded_password = decoded_password + str(decoded)
+        else:
+            decoded_password = decoded_password + str(decoded)
+    return decoded_password
+
 
 
 def encode(password: str) -> str:
